@@ -31,8 +31,11 @@ def binaryClassification(data, labels, hiddenLayers, lrate, nEpochs, kSplitt=10,
         ### Define Neuronal Network
         cbks = [callbacks.TerminateOnNaN()]
         layers=[keras.layers.Dense(i, activation=tf.nn.relu, kernel_regularizer=regularizers.l2(rp)) for i in hiddenLayers]
+#         layers=[keras.layers.Dense(i, activation=tf.nn.relu, kernel_regularizer=regularizers.l2(rp)) for i in hiddenLayers]
+#         layers=keras.layers.Dense(i, activation=tf.nn.relu, kernel_regularizer=regularizers.l2(rp))(layers)
         layers.append(keras.layers.Dense(1, activation=tf.nn.sigmoid))
         model = keras.Sequential(layers)
+        
         model.compile(optimizer = tf.train.AdamOptimizer(),
                       lr        = lrate, 
                       loss      = 'binary_crossentropy',

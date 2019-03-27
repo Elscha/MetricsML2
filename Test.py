@@ -18,9 +18,9 @@ import operations.BinaryClassification as BinaryClassification
 # x = x[columnSlice]
 # print(x)
 # columnSlice = [0,1,2]
-# DataPrepatator.preprocessData("data/RelevantMetricsData.csv", "data", 0, columnSlice, True)
-data, labels = DataPrepatator.loadData("data/allGoodOnes.npy", "data/allBadOnes.npy")
-BinaryClassification.binaryClassification(data, labels, [256, 128, 32], lrate=0.1, nEpochs=1000, kSplitt=10, plotName="Visualization_(256-128-32)_(0.1)-(1000)-")
+DataPrepatator.preprocessData("data/RelevantMetricsData.csv", "data", 0, columnsToRemove=None, shuffle=True)
+# data, labels = DataPrepatator.loadData("data/allGoodOnes.npy", "data/allBadOnes.npy")
+# BinaryClassification.binaryClassification(data, labels, [256, 128, 32], lrate=0.1, nEpochs=1000, kSplitt=10, plotName="Visualization_(256-128-32)_(0.1)-(1000)-")
 
 
 
